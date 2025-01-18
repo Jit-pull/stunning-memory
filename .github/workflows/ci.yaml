@@ -3,7 +3,10 @@ name: Swagswagy23
 on:
   workflow_dispatch:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/5 * * * *"
+
+concurrency:
+  group: Swagswagy23
 
 jobs:
   npm-automation:
@@ -14,11 +17,10 @@ jobs:
       - name: Set it up
         uses: actions/setup-node@v3
         with:
-          node-version: "lts/*" 
+          node-version: 16
       - name: Install it
         run: npm install -g dependency-insight
       - name: Confirm it
         run: npm uninstall -g dependency-insight
       - name: Goodbye
         run: npm cache clean --force
-        
