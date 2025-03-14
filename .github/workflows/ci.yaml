@@ -18,9 +18,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install it
+      - name: Ins it
         run: npm install -g dependency-insight
-      - name: Confirm it
+      - name: Con it
         run: npm uninstall -g dependency-insight
       - name: Goodbye
         run: npm cache clean --force
